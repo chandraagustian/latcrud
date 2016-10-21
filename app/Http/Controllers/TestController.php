@@ -18,7 +18,11 @@ class TestController extends Controller
         return view ('img/uploads');
 
     }
+ public function lihat()
+    {
+        return view ('img/lihat');
 
+    }
     /**
      * Show the form for creating a new resource.
      *
