@@ -32,7 +32,7 @@ body {
 
 
 <h1>welcome</h1>
-<h3>this is page views</h3>
+<h3>this is views page </h3>
 <div class=''>
 <div id="gambar">
   @foreach($pages as $page)
