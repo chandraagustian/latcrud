@@ -1,1 +1,22 @@
-<h1>page show</h1>
+<h1>Welcome</h1>
+<div class='container'>
+ <table class="table">
+  <tr>
+    <th>deskripsi</th>
+    <th>gambar</th>
+   
+  </tr>
+    
+<!-- <img src="{{ asset('img')}} -->
+     @foreach($Pages as $value)
+     <tr>
+       <td>{{$value->deskripsi}}</td>  
+      
+       <td>{{$value->foto}}</td>         
+     
+     </tr>
+   @endforeach
+  
+ </table>
+ </div>
+

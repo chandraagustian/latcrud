@@ -15,12 +15,12 @@
 // Route::get('/uploads','ImagesController@upload');
 
 // routes picture
-Route::resource('gambar', 'GambarController');
-Route::resource('marketingimage', 'MarketingImageController');
-Route::get('/list', 'PictureController@showPictureList');
-Route::get('/pic/{id}', 'PictureController@showPicture');
-Route::get('/add', 'PictureController@addPicture');
-Route::post('/add', 'PictureController@savePicture');
+// Route::resource('gambar', 'GambarController');
+// Route::resource('marketingimage', 'MarketingImageController');
+// Route::get('/list', 'PictureController@showPictureList');
+// Route::get('/pic/{id}', 'PictureController@showPicture');
+// Route::get('/add', 'PictureController@addPicture');
+// Route::post('/add', 'PictureController@savePicture');
 // endof
 Route::resource('Page', 'PageController');  
 Route::resource('Dynamic', 'DynamicController');  

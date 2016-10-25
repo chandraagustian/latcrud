@@ -62,22 +62,39 @@ body { font-family: sans-serif; }
 </head>
 <body>
 <h1>Welcome</h1>
+<div class='container'>
+ <table class="table">
+  <tr>
+    <th>deskripsi</th>
+    <th>gambar</th>
+   
+  </tr>
+    
+<!-- <img src="{{ asset('img')}} -->
+     @foreach($Pages as $value)
+     <tr>
+       <td>{{$value->deskripsi}}</td>  
+      
+       <td>{{$value->foto}}</td>         
+     
+     </tr>
+   @endforeach
+  
+ </table>
+ </div>
 
-<!-- <div class="form-group"> -->
-	<!-- {!! Form::open() !!} -->
+
+  
+  
 
 
-<!-- {!!Form::label('deskripsi', 'deskripsi');!!} -->
- <!-- {!! Form::text('name', null, array('placeholder'=>'masukan deskripsi')) !!} -->
-<!-- {!!Form::file('image');!!} -->
-<!-- {!! Form::submit('upload' , ['class' => 'btn btn-raised btn-info']);!!} -->
 
- 
-<!-- {!! Form::close() !!} -->
 
-<!-- <li>{!! link_to(route('Dynamic.index'), "Article") !!}</li> -->
-<!-- </div> -->
+  
 
+
+
+<!--  
 
 <div class="grid">
   <div class="grid-sizer"></div>
@@ -112,7 +129,7 @@ body { font-family: sans-serif; }
 
  @yield("content")
 <button type="button" class="btn btn-primary" onclick="sayHello()" value="Say Hello">Open modal for @mdo</button>
-
+-->
 
 
 

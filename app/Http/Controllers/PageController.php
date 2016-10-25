@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
- use App\Pages;
-  use Image;
-
-  use Input;
+use App\Pages;
+use Image;
+use DB;
+use Input;
 use File;
 
   // use App\Image;
@@ -21,7 +21,10 @@ class PageController extends Controller
      */
     public function index()
     {
-      return view ('imagesloaded/show');
+        $pages= Pages::all();
+
+       
+      return view ('lihat.view')->with('pages', $pages);
     }
 
     /**
@@ -61,11 +64,11 @@ class PageController extends Controller
                      }
 
    // $img=
-   Image::make($request->file('foto')->getRealPath())->resize(300, null)->save($directory."/thumb_".$imagesname);
+   Image::make($request->file('foto')->getRealPath())->resize(300, null, function ($constraint) {$constraint->aspectRatio();})->save($directory."/thumb_".$imagesname);
 
    Image::make($request->file('foto')->getRealPath())->save($directory."/ori_".$imagesname);
-    return redirect()->route("Dynamic.index");
-
+     return redirect()->route("Page.index");
+  
 
     }
 
@@ -77,9 +80,10 @@ class PageController extends Controller
      */
     public function show($id)
     {
-       
 
-    return view('imagesloaded.show');
+     $page = Pages::find($id);
+     // return View::make('Page.show')->with('page', $Pages);
+     return view('Page.index')->with('page', $page);
     }
 
     /**
